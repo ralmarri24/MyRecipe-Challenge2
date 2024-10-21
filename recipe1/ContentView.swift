@@ -26,7 +26,7 @@ struct ContentView: View {
     }
 }
 
-// TopBarView: Contains the title and "+" button
+
 struct TopBarView: View {
     let title: String
     
@@ -50,7 +50,7 @@ struct TopBarView: View {
     }
 }
 
-// EmptyStateView: Displays when there are no recipes yet
+
 struct EmptyStateView: View {
     var body: some View {
         VStack {
@@ -74,7 +74,7 @@ struct EmptyStateView: View {
     }
 }
 
-// Dummy View for Add Recipe Screen (Next Page)
+
 struct AddRecipeView: View {
     var body: some View {
         Text("This is the Add Recipe Page") // This will be the next page
