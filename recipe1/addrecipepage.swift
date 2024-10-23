@@ -21,7 +21,8 @@ struct AddRecipePage: View {
                 Button("back") {
                     // Action to navigate back
                 }.padding(.leading,10)
-                .foregroundColor(.orange)
+                .foregroundColor((Color (red:0.98, green:0.38,blue:0.07))
+                )
                 
          
                 
@@ -32,7 +33,8 @@ struct AddRecipePage: View {
                     // Save action here
                 }
                 .padding(.trailing,10)
-                .foregroundColor(.orange)
+                .foregroundColor((Color (red:0.98, green:0.38,blue:0.07))
+                )
                 
             }
      
@@ -49,27 +51,39 @@ struct AddRecipePage: View {
             VStack {
                 if let recipeImage = recipeImage {
                     Image(uiImage: recipeImage)
-                        .resizable()
-                        .scaledToFit()
+                        .resizable()//
+                        .scaledToFill()
                         .frame(height: 150)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
                 } else {
                     Button(action: {
                         showImagePicker.toggle()
                     }) {
                         VStack {
-                            Image(systemName: "photo.on.rectangle.angled")
+                            Image("photo")
                                 .resizable()
-                                .frame(width: 50, height: 50)
+                                .frame(width: 86, height: 65)
                                 .foregroundColor(.orange)
                             
                             Text("Upload Photo")
-                                .foregroundColor(.orange)
+                                .foregroundColor(Color (red:0.98, green:0.38,blue:0.07))
+                               
+                            
+                           
                         }
                         .padding()
-                        .frame(width: 400, height:200)
+                        .frame(width: 500, height:200)
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
+                        .overlay(
+                            Rectangle() // The shape for the dashed border
+                                .strokeBorder(style: StrokeStyle(lineWidth: 1, dash: [7, 5])) // Create dashed stroke
+                                .foregroundColor(Color((Color (red:0.98, green:0.38,blue:0.07))
+                                                      )))
+                        
+            
+                                                        
                     }
                 }
             }
@@ -147,7 +161,8 @@ struct AddRecipePage: View {
                 }) {
                     Image(systemName: "plus")
                         .font(.title.bold())
-                        .foregroundColor(.orange)
+                        .foregroundColor((Color (red:0.98, green:0.38,blue:0.07))
+                        )
                 }
             }
             .padding(.horizontal)
