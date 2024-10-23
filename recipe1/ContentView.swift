@@ -21,7 +21,7 @@ struct ContentView: View {
                 EmptyStateView()
                 Spacer()
             }
-            .background(Color.black.edgesIgnoringSafeArea(.all)) // Full-screen black background
+//            .background(Color.primary) // Full-screen black background
         }
     }
 }
@@ -35,18 +35,18 @@ struct TopBarView: View {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+//                .foregroundColor(.black)
             Spacer()
             
             // Navigation Link to next page
             NavigationLink(destination: AddRecipeView()) {
                 Image(systemName: "plus")
-                    .font(.title)
+                    .font(.title.bold())
                     .foregroundColor(.orange)
             }
         }
         .padding()
-        .background(Color.black)
+//        .background(Color.primary)
     }
 }
 
@@ -55,7 +55,7 @@ struct EmptyStateView: View {
     var body: some View {
         VStack {
             // Placeholder for the icon (fork and knife in circle)
-            Image(systemName: "fork.knife.circle.fill")
+            Image(systemName: "fork.knife.circle")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
@@ -64,7 +64,7 @@ struct EmptyStateView: View {
             Text("There’s no recipe yet")
                 .font(.title2)
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+               // .foregroundColor(.black)
                 .padding(.top, 20)
             
             Text("Please add your recipes")

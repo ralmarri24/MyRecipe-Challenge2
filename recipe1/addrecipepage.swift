@@ -97,26 +97,28 @@ struct AddRecipePage: View {
                 Text("Description")
                     .font(.system(size: 24, weight: .bold)) // Custom size and weight
                     
-                   
-                
                 ZStack(alignment: .topLeading) {
+                    
+                    TextEditor(text: $recipeDescription)
+                        .padding(.top,5)
+                        .padding(.leading,10)
+//                        .frame(width: 370, height: 100)
+                        .scrollContentBackground(.hidden)
+                        .background(Color.gray.opacity(0.2)) // Darker gray background
+                        .cornerRadius(5)
+                    
                     if recipeDescription.isEmpty {
                         Text("Description")
                             .foregroundColor(Color.gray)
-                            .padding(.top, 8)
-                            .padding(.leading, 5)
-                        
-                        
-                        
-                            
-                           
+                            .padding(.top,10)
+                            .padding(.leading,15)
 
                     }
                 
-                            RoundedRectangle(cornerRadius: 5)
-                        .foregroundColor(Color.gray.opacity(0.1)) // No white border
-                        .background(Color.gray.opacity(0.1)) // Darker gray background
-                 
+//                            RoundedRectangle(cornerRadius: 5)
+//                        .foregroundColor(Color.gray.opacity(0.1)) // No white border
+//                        .background(Color.gray.opacity(0.1)) // Darker gray background
+//                 
                                
                      
                 }
